@@ -418,6 +418,7 @@ model Transaction {
   autoSwapTriggered Boolean   @default(false)
   error             String?
   externalId        String?   @unique
+  idempotencyKey  String?   @unique
   virtualAccountId  String?
 
   user           User            @relation(fields: [userId], references: [id])
